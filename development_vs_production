@@ -1,0 +1,105 @@
+✅ How to preview changes locally (THIS is what you should use)
+🔹 Step 1: Start the dev server
+
+In your project folder, run:
+
+npm run dev
+
+
+Vite will show something like:
+
+Local: http://localhost:5173/
+
+🔹 Step 2: Open the app in your browser
+
+Open:
+
+http://localhost:5173
+
+🔹 Step 3: Edit your code
+
+Now:
+
+Open your code editor
+
+Change JSX, CSS, logic
+
+Save the file
+
+🎉 The browser updates automatically (Hot Module Reload).
+
+No refresh needed.
+
+🔥 This is called Hot Reloading
+
+Vite does:
+
+Watches your files
+
+Rebuilds only what changed
+
+Injects updates into the browser
+
+That’s why Vite is fast.
+
+❌ When you need to push to GitHub / Vercel
+
+You only push when:
+
+You’re happy with the change
+
+You want it live online
+
+You want to save a milestone
+
+Workflow:
+
+Edit → Save → Preview locally → Commit → Push → Deploy
+
+
+NOT:
+
+Edit → Push → Check production
+
+🧪 Example real workflow (recommended)
+
+npm run dev
+
+Make changes
+
+See them instantly at localhost
+
+Fix bugs
+
+When done:
+
+git add .
+git commit -m "Improve validation UX"
+git push
+
+
+Vercel redeploys automatically.
+
+🚨 Common mistake (avoid this)
+
+❌ Stopping dev server and refreshing production to see changes
+❌ Pushing every small change just to “see if it works”
+
+Always preview locally first.
+
+🧠 Bonus: Preview production build locally
+
+If you want to test exactly what production sees:
+
+npm run build
+npm run preview
+
+
+This runs the built app locally.
+
+🎯 Key takeaway
+
+Local dev server = instant preview
+Production deploy = final publishing
+
+You should spend 90% of your time in local dev.
