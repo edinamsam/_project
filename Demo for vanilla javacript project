@@ -1,0 +1,111 @@
+🧭 VS Code setup for this project
+1️⃣ Open the project folder
+
+In VS Code:
+
+File → Open Folder
+
+Select your calculator-app folder
+
+OR from the terminal:
+
+code calculator-app
+
+📂 Recommended file layout in VS Code
+
+In the Explorer sidebar, create:
+
+calculator-app
+├── index.html
+├── style.css
+└── script.js
+
+
+Right-click → New File for each.
+
+🌐 Live preview in VS Code (VERY useful)
+Option A (recommended): Live Server extension
+
+Open Extensions (Ctrl + Shift + X)
+
+Search: Live Server
+
+Install (by Ritwick Dey)
+
+Then:
+
+Right-click index.html
+
+Open with Live Server
+
+Any save → browser updates instantly.
+
+Option B: Open file directly (basic)
+
+Double-click index.html
+
+⚠️ Less ideal (no auto refresh).
+
+✍️ Writing the code (efficient tips)
+Emmet shortcuts (use these!)
+
+In index.html:
+
+Type:
+
+!
+
+
+Press Enter → instant HTML boilerplate.
+
+For buttons:
+
+button*4
+
+
+Press Enter → creates 4 buttons.
+
+🎨 CSS productivity tips
+
+Use Alt + Click to add multiple cursors
+
+Use Ctrl + D to select same word
+
+Use Shift + Alt + ↓ to duplicate lines
+
+🧪 Checking layout quickly
+
+In Chrome:
+
+Right-click → Inspect
+
+Toggle mobile view (Ctrl + Shift + M)
+
+Test widths: 320px, 375px
+
+🧠 VS Code terminal usage (recommended)
+
+Open terminal inside VS Code:
+
+Ctrl + `
+
+
+Then commit:
+
+git status
+git add .
+git commit -m "Add calculator layout with CSS Grid"
+
+🟢 What to do RIGHT NOW
+
+Since you’re using VS Code:
+
+Create the files
+
+Paste Step 1 HTML + CSS
+
+Open with Live Server
+
+Adjust spacing/colors if needed
+
+Commit
