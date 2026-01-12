@@ -1,0 +1,14 @@
+In command line(bash):
+touch .gitignore
+
+
+Add this inside it:
+
+node_modules/
+.DS_Store
+
+
+Then commit it:
+
+git add .gitignore
+git commit -m "Add gitignore"
