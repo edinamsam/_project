@@ -1,0 +1,114 @@
+✅ 1️⃣ Confirm you’re in the project folder
+
+In VS Code terminal:
+
+pwd
+
+
+You should see something like:
+
+.../calculator-app
+
+
+If not, cd into it.
+
+✅ 2️⃣ Check Git status (always do this)
+git status
+
+
+You should see:
+
+Clean working tree OR
+
+Files staged from Step 7 commit
+
+If anything is uncommitted, commit it first:
+
+git add .
+git commit -m "Complete calculator core functionality"
+
+✅ 3️⃣ Create a GitHub repository (if not done yet)
+
+On GitHub:
+
+Click New repository
+
+Name it (example):
+
+calculator-app
+
+
+❌ Do NOT add README
+
+❌ Do NOT add .gitignore
+
+❌ Do NOT add license
+
+Click Create repository
+
+Leave the page open.
+
+✅ 4️⃣ Add the remote origin
+
+Copy the HTTPS URL from GitHub, then run:
+
+git remote add origin https://github.com/YOUR_USERNAME/calculator-app.git
+
+
+Verify:
+
+git remote -v
+
+✅ 5️⃣ Ensure branch name is main
+git branch
+
+
+If it says master, rename it:
+
+git branch -M main
+
+✅ 6️⃣ Push to GitHub (first push)
+git push -u origin main
+
+What this does
+
+Pushes your commits to GitHub
+
+Sets main as upstream
+
+Future pushes become just git push
+
+✅ 7️⃣ Verify on GitHub
+
+Refresh your repo page.
+
+You should see:
+
+index.html
+
+style.css
+
+script.js
+
+.gitignore
+
+🎉 Your calculator is now live on GitHub.
+
+🧠 If you see common errors (quick fixes)
+❌ src refspec main does not match any
+
+→ You forgot to commit
+
+git commit -m "Initial commit"
+
+❌ remote already exists
+
+→ It’s fine — just push
+
+git push -u origin main
+
+❌ Authentication prompt
+
+→ Use GitHub login or personal access token
+
+Add t
