@@ -1,0 +1,219 @@
+🚀 STEP 1 — Create the Project (Vite)
+
+In your terminal:
+
+npm create vite@latest portfolio
+
+Select:
+
+Framework → React
+
+Variant → JavaScript
+
+Then:
+
+cd portfolio
+npm install
+
+Start it:
+
+npm run dev
+
+Make sure it loads. Don’t skip this check.
+
+🔐 STEP 2 — Initialize Git Properly
+
+Inside the project folder:
+
+git init
+git add .
+git commit -m "Initial Vite React setup"
+
+Now create your GitHub repo (empty, no README).
+
+Then connect:
+
+git remote add origin https://github.com/yourusername/portfolio.git
+git branch -M main
+git push -u origin main
+
+Now your project is version-controlled from Day 1.
+We commit after every meaningful step. Not random chaos commits 😌
+
+📦 STEP 3 — Install Core Packages
+
+We need:
+
+npm install react-router-dom
+npm install framer-motion
+
+Commit it:
+
+git add .
+git commit -m "Install routing and animation dependencies"
+git push
+
+Clean. Professional.
+
+🗂 STEP 4 — Create Proper Folder Structure
+
+Inside src, create:
+
+components/
+components/layout/
+components/ui/
+pages/
+layouts/
+assets/
+styles/
+data/
+hooks/
+
+Then commit:
+
+git add .
+git commit -m "Setup project folder structure"
+git push
+
+This is how intermediate devs work.
+
+🎨 STEP 5 — Global Dark Theme Setup
+
+Create:
+src/styles/globals.css
+
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #6366f1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+Import it in main.jsx:
+
+import "./styles/globals.css";
+
+Commit:
+
+git add .
+git commit -m "Add global dark theme styles"
+git push
+🧭 STEP 6 — Setup Routing Architecture
+
+Create src/layouts/MainLayout.jsx
+
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+
+function MainLayout() {
+  return (
+    <>
+      <Navbar />
+      <main style={{ padding: "2rem 4rem" }}>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default MainLayout;
+
+Now update App.jsx:
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+Commit:
+
+git add .
+git commit -m "Setup routing with main layout"
+git push
+🧱 STEP 7 — Create Basic Pages
+
+Create:
+
+pages/Home.jsx
+pages/Projects.jsx
+pages/About.jsx
+pages/Contact.jsx
+
+Example Home.jsx:
+
+function Home() {
+  return (
+    <section>
+      <h1>Hi, I'm Samuel</h1>
+      <p>Frontend Developer building clean and scalable interfaces.</p>
+    </section>
+  );
+}
+
+export default Home;
+
+Keep others simple placeholders for now.
+
+Commit again.
+
+🎬 STEP 8 — Add Framer Motion Page Animation
+
+Inside Home.jsx:
+
+import { motion } from "framer-motion";
+
+function Home() {
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h1>Hi, I'm Samuel</h1>
+      <p>Frontend Developer building clean and scalable interfaces.</p>
+    </motion.section>
+  );
+}
+
+export default Home;
+
+Now when you navigate between pages, it feels modern.
+
+Commit again.
+✔ Has global theme system
+✔ Uses a
