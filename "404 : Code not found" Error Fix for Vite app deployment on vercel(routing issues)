@@ -1,0 +1,100 @@
+Good — this is a very common Vercel + React Router issue.
+
+That 404: NOT_FOUND means:
+
+Vercel is trying to load /projects or /contact as a real file…
+but your app is a Single Page Application (SPA).
+
+React Router handles routing in the browser, not on the server.
+
+So when you refresh a page like:
+
+your-portfolio.vercel.app/projects
+
+Vercel looks for:
+
+/projects/index.html
+
+It doesn’t exist → 404.
+
+✅ The Fix (SPA Rewrite Rule)
+
+You need to tell Vercel:
+
+“For ANY route, always serve index.html.”
+
+Step 1 — Create vercel.json in your project root
+
+Make sure it is in the root, not inside src.
+
+portfolio/
+  ├── src/
+  ├── package.json
+  ├── vercel.json  ✅ HERE
+Step 2 — Add This EXACT Content
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+Step 3 — Commit & Push
+git add .
+git commit -m "Fix SPA routing for Vercel"
+git push
+
+Vercel will automatically redeploy.
+
+⚠ If It Still 404s
+
+Check these things carefully:
+
+1️⃣ Is vercel.json really in root?
+
+Wrong:
+
+src/vercel.json ❌
+
+Correct:
+
+vercel.json ✅
+2️⃣ Are you using BrowserRouter?
+
+Make sure in your main.jsx:
+
+import { BrowserRouter } from "react-router-dom"
+
+<BrowserRouter>
+  <App />
+</BrowserRouter>
+
+NOT:
+
+HashRouter
+3️⃣ Did the build succeed?
+
+On Vercel dashboard:
+
+Check Build Logs
+
+Make sure no errors occurred
+
+🔥 Alternative (If You Want Zero Config)
+
+Switch to HashRouter:
+
+import { HashRouter } from "react-router-dom"
+
+Then your URLs look like:
+
+your-portfolio.vercel.app/#/projects
+
+No rewrites needed.
+
+But it looks less clean.
+
+🎯 Most Likely Issue
+
+99% of the time:
+
+👉 vercel.json is either missing
+👉 or placed inside src
